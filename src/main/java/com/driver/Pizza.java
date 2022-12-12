@@ -1,10 +1,9 @@
 package com.driver;
-
 public class Pizza {
 
     private int price;
     private Boolean isVeg;
-    private String bill="";
+    private String bill;
 
     private boolean added[];
 
@@ -13,11 +12,11 @@ public class Pizza {
         added = new boolean[3];
         if(this.isVeg){
             this.price = 300;
-            this.bill+="Base Price Of The Pizza: "+this.price+"\n";
+            this.bill ="Base Price Of The Pizza: "+this.price+"\n";
         }
         else{
             this.price = 400;
-            this.bill+="Base Price Of The Pizza: "+this.price+"\n";
+            this.bill ="Base Price Of The Pizza: "+this.price+"\n";
         }
 
     }
@@ -27,11 +26,11 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-     if(!this.added[0]) {
-         this.added[0]=true;
-         this.price += 80;
-         this.bill += "Extra Cheese Added: 80\n";
-     }
+        if(!this.added[0]) {
+            this.added[0]=true;
+            this.price += 80;
+            bill += ("Extra Cheese Added: 80"+"\n");
+        }
     }
 
     public void addExtraToppings(){
@@ -39,10 +38,10 @@ public class Pizza {
             this.added[1]=true;
             if (isVeg) {
                 this.price += 70;
-                this.bill += "Extra Toppings Added: 70\n";
+                bill += "Extra Toppings Added: 70\n";
             } else {
                 this.price += 120;
-                this.bill += "Extra Toppings Added: 120\n";
+                bill += "Extra Toppings Added: 120\n";
             }
         }
     }
@@ -52,12 +51,12 @@ public class Pizza {
         if(!this.added[2]) {
             this.added[2] =true;
             this.price += 20;
-            this.bill += "Paperbag Added: 20\n";
+            bill += "Paperbag Added: 20\n";
         }
     }
 
     public String getBill(){
-        this.bill+="Total Price: "+this.price+"\n";
+        bill+="Total Price: "+this.price+"\n";
         return this.bill;
     }
 }
